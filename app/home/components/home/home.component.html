@@ -1,0 +1,96 @@
+<body>
+  <link rel="stylesheet" href="home.component.css" />
+
+  <div class="header">
+    <h1>Tea-Coffee Vending Machine</h1>
+  </div>
+
+  <!--nagivation bar-->
+  <br />
+  <div class="navbar">
+    <a href="home.html">HomeComponent</a> | <a href="refill.html">Refill</a> |
+    <a href="report.html">Report</a> |
+    <a href="container-status.html">Container Status</a>|
+  </div>
+  <br />
+  <div class="operation">
+    <div>
+      <h2>Choose Drink</h2>
+      <br />
+    </div>
+    <form (ngSubmit)="getDrinkSubmit()">
+      <table class="tbl-column-highlight">
+        <tr *ngFor="let d of drinkList">
+          <td>{{ d[0].drinkType }}</td>
+
+          <td>
+            <input
+              type="number"
+              placeholder="1"
+              name="tea"
+              [(ngModel)]="order.teaCupNum"
+            />Cup
+          </td>
+          <td>{{ d[0].cost }}</td>
+          <td><button type="submit">Get Drink</button></td>
+        </tr>
+
+        <tr *ngFor="let d of drinkList">
+          <td>{{ d[1].drinkType }}</td>
+          <td>
+            <input
+              type="number"
+              placeholder="1"
+              name="blackTea"
+              [(ngModel)]="order.blackTea"
+            />Cup
+          </td>
+          <td>{{ d[1].cost }}</td>
+          <td>
+            <button type="button" (click)="getDrinkSubmit()">Get Drink</button>
+          </td>
+        </tr>
+
+        <tr *ngFor="let d of drinkList">
+          <td>{{ d[2].drinkType }}</td>
+          <td>
+            <input
+              type="number"
+              placeholder="1"
+              name="coffee"
+              [(ngModel)]="order.coffee"
+            />Cup
+          </td>
+          <td>{{ d[1].cost }}</td>
+          <td>
+            <button type="button" (click)="getDrinkSubmit()">Get Drink</button>
+          </td>
+        </tr>
+
+        <tr *ngFor="let d of drinkList">
+          <td>{{ d[3].drinkType }}</td>
+          <td>
+            <input
+              type="number"
+              placeholder="1"
+              name="blackCoffee"
+              [(ngModel)]="order.blackCoffee"
+            />Cup
+          </td>
+          <td>{{ d[3].cost }}</td>
+          <td>
+            <button type="button" (click)="getDrinkSubmit()">Get Drink</button>
+          </td>
+        </tr>
+      </table>
+      <br />
+    </form>
+  </div>
+  <br />
+</body>
+
+<div class="footer">
+  <footer class="bg-dark text-white mt-5 p-4 text-center">
+    All rights reserved - Copyright @2021
+  </footer>
+</div>
